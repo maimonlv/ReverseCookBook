@@ -1,0 +1,103 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27/03/2017, 22:56:47
+    Author     : maimonlior
+*/
+*{
+    margin: 0 ;
+    padding: 0;
+}
+
+body{
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*#wrapper{
+    float: left;
+    width: 1250px;
+}*/
+
+#rightSide{
+    float: left;
+    width: 12%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f44336;
+}
+
+#middle{
+    float: left;
+    max-width: 900px;
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightsteelblue;
+}
+
+
+
+#leftSide{
+    float: left;
+    width: 12%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: dodgerblue;
+}
+
+
+img {
+    width:80%; 
+    height:80%;
+}
+
+h4{
+    color: white;
+}
+
+div {
+    display: block;
+}
+
+.category {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    max-width: 200px;
+    width: 33%;
+    height: 100px;
+    border: 2px solid black;
+} 
+
+#first {
+    float:left;
+    width: 100%;
+    height: 50%;
+    background: gray;
+}
+
+#second {
+    float:left;
+    width: 100%;
+    height: 30%;
+    background: lightpink;
+}
+
+#third {
+    float:left;
+    width: 100%;
+    height: 70%;
+    background: background;
+}
+

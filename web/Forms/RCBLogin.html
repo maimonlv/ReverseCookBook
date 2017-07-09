@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reverse Cookbook Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../Style/RCBLogin.css">
+    </head>
+    <body>
+        <form name="loginForm" method="post" action="../Servlets/LoginServlet">
+            <div class="imgcontainer">
+              <img src="../Images/Wellcome/login.jpg" alt="Login" class="login">
+            </div>
+
+            <div class="container">
+              <label><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required>
+
+              <label><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+
+              <button class="button LoginBtn" type="submit" value="LoginBtn">Login</button>
+              <button class="button LoginWithFacebookBtn" type="submit" value="LoginWithFacebookBtn">Login With Facebook</button>
+              <input type="checkbox" checked="checked">Remember me 
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </body>
+</html>

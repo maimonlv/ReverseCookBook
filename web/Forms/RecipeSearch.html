@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reverse CookBook - Recipe Search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../Style/RecipeSearch.css"> 
+    </head>
+    <body>
+        <div id="wrapper"> 
+            <div id="leftSide">
+                <h3>Hello left side</h3>
+            </div>
+            <div id="middle">
+                <div id="first">
+                    <div>Hello To You</div>
+                    <div>Tell us what you have in the kitchen and we will give you recipes</div>
+                    <div>Follow the ___ steps...</div>
+                    <h1>1st Step</h1>
+                    <h2>Choose Categories</h2>
+                </div>
+                <div id="second">
+                    <form action='search.php' method='POST'>
+                        <input type='text' name='search'/>
+                        <input type='submit' value='submit'/>
+                    </form>
+                </div>
+                <div id="third">
+                    <div id="listId">
+                        <div id="categories">
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/Fruits.png" alt="Fruitss_pic">
+                                    <h4>Fruits</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/Vegetables.png" alt="Vegetables_pic">
+                                    <h4>Vegetables</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/breads.png" alt="Breads_pic">
+                                    <h4>Breads</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/denis-fish.png" alt="Denis_Fish_pic">
+                                    <h4>Fish</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/makaroni-spirali.png" alt="Makaroni-spirali_pic">
+                                    <h4>Makaroni-Spirali</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/meat.png" alt="Meat_pic">
+                                    <h4>Meat</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/spaghetti.png" alt="Spaghetti_pic">
+                                    <h4>Spaghetti</h4>
+                                </a>
+                            </div>
+                            <div class="category">
+                                <a href="">
+                                    <img src="../Images/Categories/spice.png" alt="Spice_pic">
+                                    <h4>Spice</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightSide">
+                <h3>Hello right side</h3>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+        <script src="../Scripts/recipeAngy.js"></script>
+    </body>
+</html>
