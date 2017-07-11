@@ -5,6 +5,7 @@
  */
 package reverseCookBook.CookBookDataBase;
 
+import com.mongodb.MongoClient;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,7 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import reverseCookBook.Model.Recipes.Recipe;
 import reverseCookBook.Model.Users.User;
 
 /**
@@ -24,7 +24,8 @@ public class RCookBookDataBase {
     public List<User> usersList;
     private Connection con;
     private Statement stmnt;
-
+    MongoClient mongoClient = new MongoClient( "localhost", 27017);
+    
     public RCookBookDataBase() {
 //        recipesList = new ArrayList<>();
         usersList = new ArrayList<>();
