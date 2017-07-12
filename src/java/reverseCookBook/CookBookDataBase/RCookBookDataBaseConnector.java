@@ -7,26 +7,38 @@ package reverseCookBook.CookBookDataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import reverseCookBook.Model.Recipes.Recipe;
 import reverseCookBook.Model.Users.User;
+import static reverseCookBook.DeclaredConstants.Constants.*;
 
 /**
  *
  * @author maimonlior
  */
-public class RCookBookDataBase {
+public class RCookBookDataBaseConnector {
 //    public List<Recipe> recipesList;
     public List<User> usersList;
     private Connection con;
     private Statement stmnt;
+    private PreparedStatement ps;
 
-    public RCookBookDataBase() {
+    public PreparedStatement getPs() {
+        return ps;
+    }
+            
+    public RCookBookDataBaseConnector() {
 //        recipesList = new ArrayList<>();
+        con = null;
+        stmnt = null;
+        ps = null;
         usersList = new ArrayList<>();
 //        
     }
@@ -37,6 +49,13 @@ public class RCookBookDataBase {
 //            recipe.printRecipe();
 //        }
 //    }
+
+    public void prepareStatement(String statement) throws SQLException{
+            this.ps = con.prepareStatement(statement);
+            
+    }
+        
+    
     
     public void printUsersList(){
         // Print the recipe from the list....
@@ -57,12 +76,12 @@ public class RCookBookDataBase {
                 System.out.println( e.getMessage( ) );
             }
             
-            String host = "jdbc:derby://localhost:1527/Users";
-            String uName = "mlv";
-            String uPass= "020286";
+            String host = USERS_LOCAL_HOST;
+            String uName = USER_NAME_IN_USER_DATABASE;
+            String uPass= PASSWORD_IN_USER_DATABASE;
             
             this.con = DriverManager.getConnection(host, uName, uPass);
-            System.out.println("Successfully Connected");            
+            System.out.println("Successfully Connected To DATABASE: " + host);            
         }
         catch ( SQLException err ) {
             System.out.println( err.getMessage( ) );
@@ -98,6 +117,28 @@ public class RCookBookDataBase {
 
     public Statement getStmnt() {
         return stmnt;
+    }
+
+    public void setPreparedStmntString(int i, String value) {
+        try {
+            ps.setString(i, value);
+        }
+        catch (SQLException ex) {
+            System.out.println("reverseCookBook.CookBookDataBase.RCookBookDataBaseConnector.setPreparedStmntString():");
+            System.out.println(ex);
+            Logger.getLogger(RCookBookDataBaseConnector.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void setPreparedStmntInt(int i, short i0) {
+        try {
+            ps.setShort(i, i0);
+        }
+        catch (SQLException ex) {
+            System.out.println("reverseCookBook.CookBookDataBase.RCookBookDataBaseConnector.setPreparedStmntInt():");
+            System.out.println(ex);
+            Logger.getLogger(RCookBookDataBaseConnector.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

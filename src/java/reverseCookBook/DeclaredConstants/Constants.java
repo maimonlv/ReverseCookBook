@@ -27,5 +27,11 @@ public class Constants {
         VAGETABLES, FROOTS, BREDS, DRINKS, MEET, FISHES
     };
     
+    // in connectToDataBase:
+    public static final String USERS_LOCAL_HOST = "jdbc:derby://localhost:1527/Users";
+    public static final String USER_NAME_IN_USER_DATABASE = "mlv";
+    public static final String PASSWORD_IN_USER_DATABASE = "020286";
+    
+    
     
 }

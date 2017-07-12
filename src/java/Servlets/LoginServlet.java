@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import reverseCookBook.CookBookDataBase.RCookBookDataBase;
+import reverseCookBook.CookBookDataBase.RCookBookDataBaseConnector;
 
 /**
  *
@@ -22,7 +22,7 @@ import reverseCookBook.CookBookDataBase.RCookBookDataBase;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Servlets/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 
-    RCookBookDataBase rCookBookDB;
+    RCookBookDataBaseConnector rCookBookDB;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("password: " + password);
 
             // do some processing here...
-            rCookBookDB = new RCookBookDataBase();
+            rCookBookDB = new RCookBookDataBaseConnector();
             rCookBookDB.connectToDataBase();
 
             String sql = "SELECT User_Name, Password FROM Users WHERE User_Name = ? AND Password = ?";            
