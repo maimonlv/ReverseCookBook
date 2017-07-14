@@ -25,6 +25,9 @@ public class User {
         userID = ++userIDCounter;
     }
     
+    public void generateUId(){}
+    
+    
     public void printUser() {
         System.out.println("user name:" + this.firstName + " " + this.familyName);
         System.out.println("user id:" + this.userID);
