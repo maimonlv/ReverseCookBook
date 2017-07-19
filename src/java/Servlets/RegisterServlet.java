@@ -15,7 +15,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import reverseCookBook.CookBookDataBase.RCookBookDataBaseConnector;
+import reverseCookBook.CookBookDataBase.RCBUsersDataBaseConnector;
+import reverseCookBook.Model.Users.User;
 
 /**
  *
@@ -23,7 +24,7 @@ import reverseCookBook.CookBookDataBase.RCookBookDataBaseConnector;
  */
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/Servlets/RegisterServlet"})
 public class RegisterServlet extends HttpServlet {
-    RCookBookDataBaseConnector rCookBookDBConnect;
+    RCBUsersDataBaseConnector rCookBookDBConnect;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -47,31 +48,48 @@ public class RegisterServlet extends HttpServlet {
             String userName = request.getParameter("userName");
             String pass = request.getParameter("password");
             String email = request.getParameter("email");
+            //debugging
+            System.out.println("before new user");
             
+            User user = new User(fname, lname, addr, bDate, userName, pass, email);
+            System.out.println("We got: fname=" + fname + 
+                    "lname = " + lname + 
+                    "addr = " + addr + 
+                    "bDate = " + bDate + 
+                    "userName = " + userName + 
+                    "pass = " + pass + 
+                    "email = " + email);
             out.print("We Got The Information Please Wait... ");
+            System.out.println("We Got The Information Please Wait... ");
             
             // do some processing here...
-            rCookBookDBConnect = new RCookBookDataBaseConnector();
-            rCookBookDBConnect.connectToDataBase();
+            rCookBookDBConnect = new RCBUsersDataBaseConnector();
+            rCookBookDBConnect.connectToUsersDataBase();
             
             out.print("We Successfully Connected to DataBase ");
+            System.out.println("We Successfully Connected to DataBase ");
             
-            
-            rCookBookDBConnect.prepareStatement("insert into USERS values(?,?,?,?,?,?,?)");
-            rCookBookDBConnect.setPreparedStmntString(1, fname);
+            rCookBookDBConnect.prepareStatement("insert into USERS values(?,?,?,?,?,?,?,?,?)");
+            rCookBookDBConnect.setPreparedStmntInt(1, user.getUserID());
             rCookBookDBConnect.setPreparedStmntString(2, lname);
-            rCookBookDBConnect.setPreparedStmntString(3, addr);
-            rCookBookDBConnect.setPreparedStmntString(4, bDate);
-            rCookBookDBConnect.setPreparedStmntString(5, userName);
-            rCookBookDBConnect.setPreparedStmntString(6, pass);
-            rCookBookDBConnect.setPreparedStmntString(7, email);
+            rCookBookDBConnect.setPreparedStmntString(3, fname);
+            rCookBookDBConnect.setPreparedStmntString(4, addr);
+            rCookBookDBConnect.setPreparedStmntString(5, bDate);
+            rCookBookDBConnect.setPreparedStmntString(6, userName);
+            rCookBookDBConnect.setPreparedStmntString(7, pass);
+            rCookBookDBConnect.setPreparedStmntString(8, email);
+            rCookBookDBConnect.setPreparedStmntString(9, "1");
+            
             
             out.print("We Successfully prepared the statement ");
+            System.out.println("We Successfully prepared the statement ");
             
             int i = rCookBookDBConnect.getPs().executeUpdate();
-            if (i > 0)
+            if (i > 0){
                 out.print("You are successfully registered... ");
-            
+                System.out.println("You are successfully registered... ");
+            }
+                
         }
         catch(Exception e2) {
             

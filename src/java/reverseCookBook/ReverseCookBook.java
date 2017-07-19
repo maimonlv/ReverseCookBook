@@ -8,7 +8,7 @@ package reverseCookBook;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import reverseCookBook.CookBookDataBase.RCookBookDataBaseConnector;
+import reverseCookBook.CookBookDataBase.RCBUsersDataBaseConnector;
 import reverseCookBook.Model.Recipes.Recipe;
 import reverseCookBook.Model.Users.User;
 
@@ -26,13 +26,13 @@ public class ReverseCookBook {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // TODO code application logic here
-        RCookBookDataBaseConnector rCookBookDB;
+        RCBUsersDataBaseConnector rCookBookDB;
         User user;
         Recipe oneRecipe;
         
         
-        rCookBookDB = new RCookBookDataBaseConnector();
-        rCookBookDB.connectToDataBase();
+        rCookBookDB = new RCBUsersDataBaseConnector();
+        rCookBookDB.connectToUsersDataBase();
         
         for(int i = 0; i < 5; i++) {
             user = new User();

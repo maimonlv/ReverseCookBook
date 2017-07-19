@@ -28,6 +28,13 @@
                 <option>French</option>
             </select> <br/>
             <input type="submit" value="Submit"/>
+            
+            <div class="imgcontainer">
+                <h3>I remember my user and password...</h3>
+                <a href="../JSPFiles/Login.jsp">
+                <img src="../Images/Wellcome/login.jpg" alt="Login" class="login">
+              </a>
+            </div>
 
         </form>
         

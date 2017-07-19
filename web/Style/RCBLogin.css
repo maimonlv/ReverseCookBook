@@ -72,6 +72,12 @@ img.login {
     width: 20%;
     border-radius: 50%;
 }
+/* Register image */
+img.register {
+    width: 15%;
+    border-radius: 25%;
+   
+}
 
 /* Add padding to containers */
 .container {
