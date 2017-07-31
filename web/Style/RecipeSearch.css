@@ -13,7 +13,7 @@ and open the template in the editor.
 }
 
 body{
-    background-color: #eee;
+    background-color: #191919;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #f44336;
+    background-color: #DFE2DB;
 }
 
 #middle{
@@ -53,7 +53,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: dodgerblue;
+    background-color: #FFF056;
 }
 
 
