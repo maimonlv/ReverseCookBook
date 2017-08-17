@@ -20,20 +20,30 @@ public class Recipe {
     private Directions directions;
     private RecipeCategory category;
     private int recipeID;
-    static private int recipeIDCounter = 0;
     
     public Recipe(){
         this.recipeName = "Im_A_New_Recipe";
         this.ingredientsList = new ArrayList<>();
         this.directions = new Directions();
         //this.category = new RecipeCategory();
-        recipeID = ++recipeIDCounter;
         
+    }
+    
+    public boolean isContainIngredient(Ingredient ingrdnt){
+        boolean res = false;        
+        res = ingredientsList.contains(ingrdnt);
+        for (Ingredient currIngr: ingredientsList){
+            if (currIngr.getIngredientType() == ingrdnt.getIngredientType())
+                res = true;
+        }
+        return res;
     }
     
     public void printRecipe(){
         System.out.println("The Recipe name is:" + this.recipeName);
         System.out.println("recipe id:" + this.recipeID);
+        System.out.println("recipe Ingredients:" + this.ingredientsList);
+        System.out.println("recipe Directions:" + this.directions);
     }
 
     public String getRecipeName() {

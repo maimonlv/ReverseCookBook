@@ -21,9 +21,9 @@ public class Constants {
 //    public static final String[] PLAYERSIMAGESNAMES = {"shoe", "horse", "car", "hat", "ship", "thimble"};
 //    
     
-    public static final String[] INGREDIANTS = {"VAGETABLES", "FROOTS", "BREDS", "DRINKS", "MEET", "FISHES"};
+    public static final String[] INGREDIENTS = {"VAGETABLES", "FROOTS", "BREDS", "DRINKS", "MEET", "FISHES"};
     
-    public enum IngrediantsType {
+    public enum IngredientsType {
         VAGETABLES, FROOTS, BREDS, DRINKS, MEET, FISHES
     };
     

@@ -6,6 +6,9 @@ and open the template in the editor.
 /* 
     Created on : 27/03/2017, 22:56:47
     Author     : maimonlior
+
+    Modified on : 01/08/2017, 00:35:00
+    Author     : maimonlior
 */
 *{
     margin: 0 ;
@@ -13,7 +16,7 @@ and open the template in the editor.
 }
 
 body{
-    background-color: #191919;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +34,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #DFE2DB;
+    background-color: #C2E1A6;
 }
 
 #middle{
@@ -41,7 +44,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: lightsteelblue;
+    background-color: #f1f1f1;
 }
 
 
@@ -53,7 +56,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #FFF056;
+    background-color: #C2E1A6;
 }
 
 
@@ -84,20 +87,21 @@ div {
     float:left;
     width: 100%;
     height: 50%;
-    background: gray;
+    background: #41A472;
 }
 
 #second {
     float:left;
     width: 100%;
     height: 30%;
-    background: lightpink;
+    background: white;
 }
 
 #third {
     float:left;
     width: 100%;
     height: 70%;
-    background: background;
+    background: #73AFAD;
+    
 }
 

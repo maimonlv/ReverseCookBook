@@ -5,8 +5,9 @@
  */
 package reverseCookBook.Model.Ingredients;
 
-import reverseCookBook.DeclaredConstants.Constants.IngrediantsType;
-import static reverseCookBook.DeclaredConstants.Constants.IngrediantsType.VAGETABLES;
+import java.util.List;
+import reverseCookBook.DeclaredConstants.Constants.IngredientsType;
+import static reverseCookBook.DeclaredConstants.Constants.IngredientsType.VAGETABLES;
 
 /**
  *
@@ -14,22 +15,19 @@ import static reverseCookBook.DeclaredConstants.Constants.IngrediantsType.VAGETA
  */
 public class Ingredient {
     
-    private IngrediantsType ingredientType;
+    private IngredientsType ingredientType;
     private String ingredientName;
-    private IngredientsAmount amount;
+    private Integer amount;
     
     public Ingredient(){
-        ingredientType = VAGETABLES;
         ingredientName = "Im A New Ingredient";
-        amount = new IngredientsAmount();
-        
     }
     
-    public IngrediantsType getIngredientType() {
+    public IngredientsType getIngredientType() {
         return ingredientType;
     }
 
-    public void setIngredientType(IngrediantsType ingredientType) {
+    public void setIngredientType(IngredientsType ingredientType) {
         this.ingredientType = ingredientType;
     }
 
@@ -41,12 +39,4 @@ public class Ingredient {
         this.ingredientName = ingredientName;
     }
 
-    public IngredientsAmount getAmount() {
-        return amount;
-    }
-
-    public void setAmount(IngredientsAmount amount) {
-        this.amount = amount;
-    }
-   
 }
